@@ -1,0 +1,37 @@
+\documentclass[a4paper]{article}
+
+\usepackage[Slovene]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\title{Seminarska naloga iz časovnih vrst}
+\author{Dejan Perić}
+
+\begin{document}
+\maketitle
+
+
+\section{Stvari do sedaj}
+
+Izdelek naj vključuje: rezultate ustreznih postopkov, vse potrebne grafikone ter interpretacijo rezultatov z morebitno diskusijo. Izdelek naj ne vključuje programske kode, razen če le-ta ne bo eksplicitno zahtevana ob predstavitvi.
+
+Za vsako od prejetih časovnih vrst:
+\begin{enumerate}
+\item Narišite graf in komentirajte, ali se iz njega vidi kakšen trend ali sezonskost.
+\item Odstranite morebiten trend in sezonskost z metodami, uporabljenimi pri tečaju: (zaporedno) diferenciranje, logaritmiranje, neposredna ocena sezonskih komponent, polinomski trend stopnje največ 3 ali prileganje periodične funkcije (ali kakšna kombinacija teh metod). Ni dovoljena uporaba naprednih R-ovih ukazov, kakršna sta stl ali decompose. Potem ko odstranite morebiten trend, narišite tudi surovi in zglajeni periodogram ter komentirajte, ali se vidi kakšna sezonskost in kakšna naj bi bila perioda.
+\item Narišite graf rezidualov in komentirajte, ali so videti stacionarni. Stacionarnost tudi preizkusite z uporabo ustreznih statističnih metod.
+\item Na rezidualih naredite grafikona ACF in PACF in na njuni podlagi predlagajte vsaj en model vrste AR(p) ali MA(q).
+\item Na podlagi Yule-Walkerjevih cenilk in kriterija AIC izberite najboljši model AR(p). Primerjajte ga z najboljšim modelom ARMA(p, q) za p + q <= 3 po kriteriju AIC (pozor: kriterij AIC je lahko definiran drugače od postopka do postopka). Če je videti smiselno, pa namesto tega uporabite model GARCH.
+\item Izberite »optimalni« model in ocenite vse njegove parametre. Pojasnite vašo izbiro.
+\item Oglejte si ostanke po vašem modelu in komentirajte, ali so videti kot beli šum. Njihovo porazdelitev primerjajte z normalno.
+\item Z uporabo izbranega modela in pod predpostavko normalnosti z R-ovo funkcijo predict konstruirajte 90\% napovedni interval za naslednjo vrednost. Ne pozabite vračunati tudi odstranjenega trenda in sezonskosti.
+\item Dobljeni napovedni interval primerjajte z napovednim intervalom, ki bi ga dobili, če bi naivno privzeli, da so podatki kar Gaussov beli šum – pred in po odstranitvi trenda in sezonskosti.
+\end{enumerate}
+
+
+
+\end{document}
